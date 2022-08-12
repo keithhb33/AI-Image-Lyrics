@@ -3,5 +3,7 @@ Locally hosted Flask web-app. Users enter an artist and song title and receive A
 
 <center><img align="center" src="readme_images/AI Images Lyric Generator.JPG"></img></center>
 <br/>
+<p align="center">
+   <img src="readme_images/moreimages.JPG"></img>
+</p>
 
-<center><img align="center" src="readme_images/moreimages.JPG"></img></center>
