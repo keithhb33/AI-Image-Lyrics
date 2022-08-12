@@ -3,7 +3,7 @@ Locally hosted Flask web-app. Users enter an artist and song title and receive A
 
 <p align="center">
    <img align="center" src="readme_images/titlepage.JPG"></img><br/>
-   <h2>...<h2>
+   <p>...<p>
    <img src="readme_images/moreimages.JPG"></img>
 </p>
 
