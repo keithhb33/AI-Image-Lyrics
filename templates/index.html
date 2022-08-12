@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <title>AI Images Lyric Generator </title>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='style.css') }}">
+    </head>
+
+  <body>
+
+    <h1 style="text-align: center; font-size: xx-large;">AI Images Lyric Generator</h1>
+
+
+    <div class="artist_song" style="text-align: center;">
+        <label id="artist-label" for="artist">Arist:</label><br/>
+        <input type="text" id="artist" name="artist"><br/>
+        
+        <br/>
+
+        <label id="song-label" for="song">Song:</label><br>
+        <input type="text" id="song" name="song"><br><br>
+        <button id="submit-button" onclick="makeRequest()">Submit</button>
+    </div>
+
+    <div class="wait-message">
+        <p id="generating-text"></p>
+    </div>
+
+    <div class="refresh-button">
+      <button onClick="refreshPage();">Load Images</button>
+    </div>
+    <br/><br/>
+    <div class="cleared">
+      <button id = "clear-button" onClick="clearImages();">Clear Images</button>
+    </div>
+
+    <h4 id = "maybe-generating" style="text-align: center;">Images may be generating...</h4><br/>
+
+
+    <p id = 'selectvalue'></p>
+
+    <script>
+      //name = ['Joe','John','Jim','Paul','Niall','Tom']
+  
+      var image_text = [];
+      var lyrics_text = [];
+
+      var selectvalue = document.getElementById("selectvalue"), test = {{ name | tojson }};
+      var lyrics = {{ lyric | tojson}};
+
+      for (let i = 0; i < test.length; i++){
+          txt = test[i];
+          image_text.push(String(txt));
+      }
+
+      for (let i = 0; i < lyrics.length; i++){
+          txt_lyric = lyrics[i];
+          lyrics_text.push(String(txt_lyric));
+      }
+
+
+      for (let j=0; j < image_text.length; j++){
+          let img = new Image();
+          let lyr = document.createElement("p");
+          lyr.innerText = lyrics_text[j];
+
+
+          img_source = "data:image/jpeg;base64," + image_text[j];
+          img.src = img_source;
+          img.classList.add('final-images');
+
+          document.body.appendChild(lyr);
+          document.body.appendChild(img);
+
+      }
+
+  </script>
+
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+
+    <script src="{{url_for('static', filename='script.js')}}"></script>
+
+
+
+
+  </body>
+</html>

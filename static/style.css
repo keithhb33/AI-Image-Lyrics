@@ -1,0 +1,17 @@
+body{
+    text-align: center;
+}
+
+.wait-message{
+    text-align: center;
+    font-size: large;
+    margin-top: 3%;
+}
+
+.refresh-button{
+    text-align: center;
+}
+
+.final-images{
+    text-align: center;
+}
