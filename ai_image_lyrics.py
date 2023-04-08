@@ -40,7 +40,7 @@ print("MAKE SURE YOU'RE IN THE .py FILES' DIRECTORY")
 
 
 app = Flask(__name__)
-app.config["IMAGE_UPLOADS"] = "/home/keith/VSCode/AIMusicVideos/static/outputs"
+app.config["IMAGE_UPLOADS"] = "/home/USER/VSCode/AIMusicVideos/static/outputs"
 app.config["ALLOWED_IMAGE_EXTENSIONS"] = ["PNG", "JPG", "JPEG"]
 
 def allowed_image(filename):
